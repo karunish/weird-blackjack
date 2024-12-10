@@ -41,6 +41,40 @@ public class SuitedCard extends CardSuperItem
         }
     }
 
+    @Override
+    public String getCardArt() {
+        String suitSymbol = switch (getSuit()) {
+            case "Spades" -> "♠";
+            case "Hearts" -> "♥";
+            case "Diamonds" -> "♦";
+            case "Clubs" -> "♣";
+            default -> "?";
+        };
+
+        String cardDisplay = switch (getCardName()) 
+        		{
+            case "Jack" -> "J";
+            case "Queen" -> "Q";
+            case "King" -> "K";
+            case "Ace" -> "A";
+            case "Deuce" -> "2";
+            case "Trey" -> "3";
+            case "Seven" -> "7";
+            case "Eight" -> "8";
+            case "Niners" -> "9";
+
+            default -> getCardName();
+        };
+
+        return """
+            ┌───────┐
+            │%2s     │
+            │   %s   │
+            │    %2s │
+            └───────┘
+            """.formatted(suitSymbol, cardDisplay, suitSymbol);
+    }
+    
     public void printCardDetails() 
     {
         String article = ("AEIOU".indexOf(getCardName().charAt(0)) >= 0) ? "An" : "A";
