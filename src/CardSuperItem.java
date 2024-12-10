@@ -50,4 +50,7 @@ public abstract class CardSuperItem
     {
         return suit;
     }
+    
+    public abstract String getCardArt();
+
 }
