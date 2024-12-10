@@ -111,7 +111,7 @@ public class MainClass
                     currentHandTotal += effect;
                     break;
             }
-            
+            System.out.println(drawnCard.getCardArt());
             if (drawnCard.getSuit() != null) {
                 System.out.println("Drew " + getArticle(drawnCard.getCardName()) + " " + drawnCard.getCardName() + " of " + drawnCard.getSuit() + ", Current hand total: " + currentHandTotal);
             } else {
