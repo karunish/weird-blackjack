@@ -25,6 +25,16 @@ public class NumberCard extends CardSuperItem
         return getValue();
     }
 
+    public String getCardArt() {
+        return """
+            ┌───────┐
+            │       │
+            │  %2d   │
+            │       │
+            └───────┘
+            """.formatted(getValue());
+    }
+    
     public void printCardDetails() 
     {
         String article = ("AEIOU".indexOf(getCardName().charAt(0)) >= 0) ? "An" : "A";
